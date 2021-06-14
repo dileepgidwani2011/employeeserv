@@ -35,3 +35,24 @@ We would like you to enhance the existing project and see you complete the follo
 
 ## Assignment submission
 Thank you very much for your time to take this test. Please upload this complete solution in Github and send us the link to `bfs-sor-interview@paypal.com`.
+
+
+From Dileep:
+New end point /v1/bfs/employee/create is added to create employee and added employeeKey in header to implement Idempotency logic.
+employeeKey is a mandatory param to pass. Please find the example request as below.
+
+curl --location --request POST 'http://localhost:8080/v1/bfs/employee/create' \
+--header 'Content-Type: application/json' \
+--header 'employeeKey: cf95873f-3d97-4173-96b4-c86662570596' \
+--data-raw '{
+    "first_name": "Dileep",
+    "last_name": "Gidwani",
+    "dob": "1988-07-02",
+    "address": {
+        "line1 "sobha",
+        "city": "b",
+        "state": "k",
+        "country": "I",
+        "zip_code": "560087"
+    }
+}'
